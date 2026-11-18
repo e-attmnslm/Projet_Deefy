@@ -1,0 +1,4 @@
+config/deefy.db.ini
+audio/*.mp3
+.idea/
+.vscode/

@@ -1,0 +1,20 @@
+RewriteEngine On
+#
+# RewriteBase indispensable sur webetu :
+# à adapter à votre identifiant ENT et au nom du dossier déployé
+# (ex. /www/dupont5u/deefy). Sans effet gênant en local sur XAMPP.
+RewriteBase /www/votre-identifiant-ent-ici/deefy
+
+#
+# Pour interdire l'accès aux répertoires contenant du code
+# (les commentaires sont sur leur propre ligne : Apache n'accepte pas
+#  de commentaire en fin de directive)
+#
+# interdit l'accès à deefy/sql
+RewriteRule ^sql(/.*|)$ - [NC,F]
+# interdit l'accès à deefy/src (il ne doit pas contenir index.php)
+RewriteRule ^src(/.*|)$ - [NC,F]
+# interdit l'accès à deefy/vendor (code des dépendances)
+RewriteRule ^vendor(/.*|)$ - [NC,F]
+# interdit l'accès à tous les fichiers .ini
+RewriteRule \.ini$ - [NC,F]
